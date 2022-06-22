@@ -1,7 +1,7 @@
 const symmetricDifference = (...args) => {
-    let arr = arguments[0];
+    let arr = args[0];
     for(let i=1; i<args.length; i++) {
-            let newArr = removeCommon(arr, arguments[i]);
+            let newArr = removeCommon(arr, args[i]);
         arr = newArr;
     }
     return [...new Set(arr)];
