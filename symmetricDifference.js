@@ -11,5 +11,5 @@ const removeCommon = (a, b) => {
    const spreaded = [...a, ...b];
    return spreaded.filter(el => !(a.includes(el) && b.includes(el)))
 };
-   
+
 symmetricDifference([1, 2, 3], [5, 2, 1, 4]);
