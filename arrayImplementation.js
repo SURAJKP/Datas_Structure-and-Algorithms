@@ -18,17 +18,24 @@ class MyArray {
     }
     shift() {
         delete this.data[0];
-        this.length--;
-        for(let i=0; i < this.length-1; i++) {
+        for(let i=0; i < this.length; i++) {
             this.data[i] = this.data[i + 1];
         }
+        delete this.data[this.length-1];
+        this.length--;
         return this.length;
     }
 }
 
 const newArray = new MyArray();
 newArray.get();
-newArray.push('Hi');
-newArray.push('Hello');
+newArray.push('A');
+newArray.push('B');
+newArray.push('C');
+newArray.push('D');
+newArray.push('E');
+newArray.push('F');
+newArray.push('G');
+newArray.push('H');
 newArray.shift();
 console.log(newArray);
