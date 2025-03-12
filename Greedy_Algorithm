@@ -1,0 +1,82 @@
+Greedy Algorithm: 
+
+A Greedy Algorithm is an approach where we make the best possible choice *at each step* to find the overall optimal solution. This means that at every stage, the algorithm picks the most beneficial option *without considering future consequences.  
+
+Key Characteristics of a Greedy Algorithm: 
+1. Greedy Choice Property – The best choice at any step must be part of an optimal solution.  
+2. Optimal Substructure – An optimal solution to the problem contains optimal solutions to subproblems.  
+3. Local Optimization – It picks the best option available at each step in the hope of reaching the best global solution.  
+
+---
+
+Example 1: Coin Change Problem (Indian Currency)
+Problem:
+You have to give a customer ₹93 using the least number of coins/notes. The available denominations are: *₹1, ₹2, ₹5, ₹10, ₹20, ₹50, ₹100.
+
+Greedy Approach:
+1. Start with the largest denomination that is not greater than ₹93. That is ₹50.
+2. Now, remaining amount = *₹93 - ₹50 = ₹43*  
+3. Take ₹20, remaining amount = *₹43 - ₹20 = ₹23*  
+4. Take ₹20 again, remaining amount = *₹23 - ₹20 = ₹3*  
+5. Take ₹2, remaining amount = *₹3 - ₹2 = ₹1*  
+6. Take ₹1, remaining amount = *₹1 - ₹1 = ₹0*  
+
+Result: ₹93 is given using 5 coins/notes: *₹50, ₹20, ₹20, ₹2, ₹1
+
+This is an example of a Greedy Algorithm because at each step, we chose the highest possible denomination to minimize the number of coins/notes.
+
+---
+
+Example 2: Activity Selection Problem
+Problem:
+You have multiple activities with start and end times. You need to schedule as many activities as possible without overlap.
+
+| Activity | Start Time | End Time |
+|----------|-----------|---------|
+| A1       | 1         | 3       |
+| A2       | 2         | 5       |
+| A3       | 4         | 6       |
+| A4       | 6         | 8       |
+| A5       | 5         | 7       |
+| A6       | 8         | 9       |
+
+Greedy Approach:
+1. Sort activities by end time:  
+   (A1, A3, A5, A4, A6)
+2. Select the first activity *A1 (1-3)*.  
+3. Select the next non-overlapping activity *A3 (4-6)*.  
+4. Select the next non-overlapping activity *A4 (6-8)*.  
+5. Select the next non-overlapping activity *A6 (8-9)*.  
+
+Result: Maximum number of activities = 4 (A1, A3, A4, A6).
+
+The greedy approach works because selecting the earliest finishing activity maximizes the number of activities that can be scheduled.
+
+---
+
+Example 3: Huffman Coding (Data Compression)
+Huffman coding is used in *data compression algorithms* like ZIP files. It assigns *shorter codes to frequent characters* and *longer codes to rare characters*, reducing the overall size of the data.
+
+1. Count the frequency of each character.
+2. Create a *binary tree*, always combining the two least frequent characters.
+3. Assign *0* and *1* to left and right branches.
+4. Generate variable-length codes for each character.
+
+Since it makes *greedy* choices at every step, Huffman coding ensures the optimal compression.
+
+---
+
+When to Use Greedy Algorithms?
+Greedy algorithms work well when:  
+✅ The problem has an *optimal substructure* (solving subproblems leads to the optimal overall solution).  
+✅ The problem exhibits the *greedy choice property* (local optimization leads to global optimization).  
+
+### *When Greedy Fails?*  
+❌ If choosing the locally best option leads to a bad overall solution.  
+
+For example, in the *0/1 Knapsack Problem*, a *Dynamic Programming* approach is better than a greedy approach.
+
+---
+
+Conclusion 
+The Greedy Algorithm is *fast and simple* but does not always guarantee the optimal solution. It is widely used in scheduling, graph algorithms (Dijkstra’s algorithm), and optimization problems.
