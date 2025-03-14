@@ -71,7 +71,7 @@ Greedy algorithms work well when:
 ✅ The problem has an *optimal substructure* (solving subproblems leads to the optimal overall solution).  
 ✅ The problem exhibits the *greedy choice property* (local optimization leads to global optimization).  
 
-### *When Greedy Fails?*  
+When Greedy Fails?
 ❌ If choosing the locally best option leads to a bad overall solution.  
 
 For example, in the *0/1 Knapsack Problem*, a *Dynamic Programming* approach is better than a greedy approach.
